@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+    pokemon-web:
+        container_name: 'pokemon-web'
+        image: nginx:latest
+        ports:
+            - 80:80
+        volumes:
+            - ./src:/src
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - pokemon-app
+
+    pokemon-app:
+        container_name: 'pokemon-app'
+        build: ./php
+        volumes:
+            - ./src:/src
+        depends_on:
+            - pokemon-db
+
+    pokemon-db:
+        container_name: 'pokemon-db'
+        image: mysql:5.7
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_DATABASE=${MYSQL_DATABASE_DEV}
+            - MYSQL_USER=${MYSQL_USER_DEV}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD_DEV}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD_DEV}
+        volumes:
+            - mysql_data:/var/lib/mysql
+
+volumes:
+    mysql_data:
