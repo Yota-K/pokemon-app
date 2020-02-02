@@ -67166,9 +67166,7 @@ var app = new Vue({
   el: '#app'
 }); // simpleMDEを読み込む
 
-var editor = __webpack_require__(/*! ./editor */ "./resources/js/editor.js");
-
-var marked = __webpack_require__(/*! ./marked */ "./resources/js/marked.js");
+var editor = __webpack_require__(/*! ./editor */ "./resources/js/editor.js"); // const marked = require('./marked');
 
 /***/ }),
 
@@ -67312,23 +67310,6 @@ submitBtn.addEventListener('click', function (e) {
   simpleEditor.codemirror.save();
   hiddenEditor.value = editorEl.value;
 });
-
-/***/ }),
-
-/***/ "./resources/js/marked.js":
-/*!********************************!*\
-  !*** ./resources/js/marked.js ***!
-  \********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marked */ "./node_modules/marked/src/marked.js");
-/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(marked__WEBPACK_IMPORTED_MODULE_0__);
-
-var content = document.getElementById('content');
-marked__WEBPACK_IMPORTED_MODULE_0___default()(content);
 
 /***/ }),
 

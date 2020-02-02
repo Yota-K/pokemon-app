@@ -33,4 +33,3 @@ const app = new Vue({
 
 // simpleMDEを読み込む
 const editor = require ('./editor');
-const marked = require('./marked');
