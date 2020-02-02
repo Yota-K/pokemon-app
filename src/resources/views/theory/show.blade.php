@@ -26,7 +26,9 @@
                     <span class="belongings">{{ $theory->pokemon->belongings }}</span>
                 </div>
                 <div class="content-wrapper">
-                    <div id="content">{{ $theory->content }}</div>
+                    <div id="content">
+                        @markdown ($content)
+                    </div>
                 </div>
             </div>
         </div>

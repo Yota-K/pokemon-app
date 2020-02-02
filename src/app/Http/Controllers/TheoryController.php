@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Theory;
 use App\Pokemon;
+use Purifier;
 
 class TheoryController extends Controller
 {
@@ -37,9 +38,14 @@ class TheoryController extends Controller
     public function show(Request $request, string $id) 
     {
         $theory = Theory::findOrFail($id);
+        $get_content = $theory->content;
+        
+        // 有害なタグを除去(XSS対策)
+        $content = Purifier::clean($get_content, array('Attr.EnableID' => true));
 
         return view('theory.show', [
-            'theory' => $theory
+            'theory' => $theory,
+            'content' => $content
         ]);
     }
 
