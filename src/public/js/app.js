@@ -67166,7 +67166,7 @@ var app = new Vue({
   el: '#app'
 }); // simpleMDEを読み込む
 
-var editor = __webpack_require__(/*! ./editor */ "./resources/js/editor.js"); // const marked = require('./marked');
+var editor = __webpack_require__(/*! ./editor */ "./resources/js/editor.js");
 
 /***/ }),
 
@@ -67299,16 +67299,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simplemde_dist_simplemde_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simplemde_dist_simplemde_min_css__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var editorEl = document.getElementById('editor');
-var hiddenEditor = document.getElementById('hidden-editor');
-var submitBtn = document.getElementById('submit-btn');
-var simpleEditor = new simplemde__WEBPACK_IMPORTED_MODULE_0___default.a({
-  element: editorEl
-});
-submitBtn.addEventListener('click', function (e) {
-  // エディター内のテキストをtextareaコピー
-  simpleEditor.codemirror.save();
-  hiddenEditor.value = editorEl.value;
+window.addEventListener('DOMContentLoaded', function () {
+  var editorEl = document.getElementById('editor');
+  var hiddenEditor = document.getElementById('hidden-editor');
+  var submitBtn = document.getElementById('submit-btn');
+  var simpleEditor = new simplemde__WEBPACK_IMPORTED_MODULE_0___default.a({
+    element: editorEl
+  });
+  submitBtn.addEventListener('click', function (e) {
+    // エディター内のテキストをtextareaコピー
+    simpleEditor.codemirror.save();
+    hiddenEditor.value = editorEl.value;
+  });
 });
 
 /***/ }),
