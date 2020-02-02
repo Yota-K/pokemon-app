@@ -23,11 +23,16 @@
                 <div class="card-body">
                     <h2><a href="{{ route('theory.show', ['id' => $theory->id]) }}">{{ $theory->title }}</a></h2>
                     <div class="pokemon-data">
-                        <span class="pokemon-name">{{ $theory->pokemon->pokemon_name }}</span>
-                        <div class="pokemon-type">
-                            <span class="type-1">{{ $theory->pokemon->first_type }}</span>
+                        <span class="pokemon-name">ポケモン：{{ $theory->pokemon->pokemon_name }}</span>
+                        <div class="pokemon-types">
+                            <span class="pokemon-type">タイプ：</span>
+                            <span class="type type-<?php echo $theory->pokemon->type_index(config('types'), $theory->pokemon->first_type); ?>">
+                                {{ $theory->pokemon->first_type }}
+                            </span>
                             @if ( $theory->pokemon->second_type !== 'ー')
-                                <span class="type-2">{{ $theory->pokemon->second_type }}</span>
+                                <span class="type type-<?php echo $theory->pokemon->type_index(config('types'), $theory->pokemon->second_type); ?>">
+                                    {{ $theory->pokemon->second_type }}
+                                </span>
                             @endif
                         </div>
                         <div class="pokemon-sub-data">

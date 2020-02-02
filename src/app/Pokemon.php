@@ -18,4 +18,14 @@ class Pokemon extends Model
         'user_id',
         'theory_id',
     ];
+
+    public function type_index(array $types ,string $get_type) {
+        $index = 1;
+
+        foreach ($types as $key => $type) {
+            if ($type === $get_type) $index += $key;
+        }
+
+        return $index;
+    }
 }
