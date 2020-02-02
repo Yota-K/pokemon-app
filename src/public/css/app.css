@@ -11356,3 +11356,89 @@ a.text-dark:focus {
   }
 }
 
+.card-body {
+  line-height: 190%;
+}
+
+.card-body .pokemon-types .type {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 2px;
+  padding: 0.2rem;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.card-body .pokemon-types .type-1 {
+  background: #6b6969;
+}
+
+.card-body .pokemon-types .type-2 {
+  background: orange;
+}
+
+.card-body .pokemon-types .type-3 {
+  background: #00a2ff;
+}
+
+.card-body .pokemon-types .type-4 {
+  background: #bbbd4c;
+}
+
+.card-body .pokemon-types .type-5 {
+  background: #14a310;
+}
+
+.card-body .pokemon-types .type-6 {
+  background: #1fdada;
+}
+
+.card-body .pokemon-types .type-7 {
+  background: #d15c0d;
+}
+
+.card-body .pokemon-types .type-8 {
+  background: #7b11ac;
+}
+
+.card-body .pokemon-types .type-9 {
+  background: #915b1e;
+}
+
+.card-body .pokemon-types .type-10 {
+  background: #006eff;
+}
+
+.card-body .pokemon-types .type-11 {
+  background: #ec55ec;
+}
+
+.card-body .pokemon-types .type-12 {
+  background: #52d447;
+}
+
+.card-body .pokemon-types .type-13 {
+  background: #4e4702;
+}
+
+.card-body .pokemon-types .type-14 {
+  background: #290580;
+}
+
+.card-body .pokemon-types .type-15 {
+  background: #ff7b00;
+}
+
+.card-body .pokemon-types .type-16 {
+  background: #252323;
+}
+
+.card-body .pokemon-types .type-17 {
+  background: #52514e;
+}
+
+.card-body .pokemon-types .type-18 {
+  background: #fd8fb4;
+}
+
