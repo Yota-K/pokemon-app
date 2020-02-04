@@ -43,12 +43,25 @@
                     </div>
                     <p class="description">{{ $theory->description }}[...]</p>
                     <div class="user-info">
+                        @if ($theory->user->icon_url !== null)
+                            <span 
+                                class="user-icon theory-user-icon"
+                                style="background: url({{ asset(Storage::url($theory->user->icon_url)) }}); background-size: cover;"
+                            ></span>
+                        @else
+                            <span 
+                                class="user-icon theory-user-icon"
+                                style="background: url({{ asset(Storage::url('/default-icon/default-icon.png')) }}); background-size: cover;"
+                            ></span>
+                        @endif
                         <span class="user-name"><a href="{{ route('user.show', ['id' => $theory->user_id]) }}">{{ $theory->user->name }}</a></span>
-                        <span class="date">{{ $theory->created_at->format('Y年m月d日 H:i') }}</span>
+                        <time class="date">{{ $theory->created_at->format('Y年m月d日 H:i') }}</time>
                     </div>
-                    @if (Auth::id() === $theory->user_id)
-                        <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
-                        <a href="#" data-toggle="modal" data-target="#modal1">削除する</a>
+                    @if (Auth::id() === $theory->user->id)
+                        <div class="edit-area">
+                            <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
+                            <a href="#" data-toggle="modal" data-target="#modal1">削除する</a>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -60,7 +73,7 @@
         >
             <form class="modal-dialog" role="document" 
                 method="POST" 
-                action="{{ route('theory.destroy', ['theory' => $theory])}}"
+                action=""
             >
                 @method ('DELETE')
                 @csrf
