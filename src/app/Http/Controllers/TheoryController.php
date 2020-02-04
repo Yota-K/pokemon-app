@@ -67,8 +67,8 @@ class TheoryController extends Controller
         if ($validator->fails()) {
             return redirect()
                 ->back()
-                ->withInput()
-                ->withErrors($validator);
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $data = $theory->create([
@@ -111,8 +111,8 @@ class TheoryController extends Controller
         if ($validator->fails()) {
             return redirect()
                 ->back()
-                ->withInput()
-                ->withErrors();
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $theory->fill($request->all())->save();
@@ -121,8 +121,9 @@ class TheoryController extends Controller
         return redirect('/');
     }
 
-    public function destroy(Theory $theory) 
+    public function destroy(string $id)
     {
+        $theory = Theory::findOrFail($id);
         $theory->delete();
         return redirect('/');
     }
