@@ -25,6 +25,7 @@ Route::post('/theory', 'TheoryController@store')->name('theory.store');
 Route::get('/theory/{id}', 'TheoryController@show')->name('theory.show');
 Route::get('/theory/{id}/edit', 'TheoryController@edit')->name('theory.edit');
 Route::patch('/theory/{id}', 'TheoryController@update')->name('theory.update');
+Route::get('/theory/{id}/delete', 'TheoryController@delete')->name('theory.delete');
 Route::delete('/theory/{id}', 'TheoryController@destroy')->name('theory.destroy');
 
 // 認証関連
