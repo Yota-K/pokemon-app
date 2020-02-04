@@ -1,3 +1,4 @@
+// ポケモンのタイプの色を出力するための変数
 $colors: (
     1: rgb(107, 105, 105),
     2: rgb(255, 165, 0),
@@ -84,5 +85,17 @@ $colors: (
         border-radius: 0.25rem;
         border: 1px solid rgba(0, 0, 0, 0.125);
         margin: 10px 0;
+    }
+}
+
+// フッター
+#footer {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    .copyright {
+        font-weight: bold;
     }
 }
