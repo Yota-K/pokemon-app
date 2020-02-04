@@ -11498,3 +11498,15 @@ a.text-dark:focus {
   margin: 10px 0;
 }
 
+#footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+}
+
+#footer .copyright {
+  font-weight: bold;
+}
+
