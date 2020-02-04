@@ -121,6 +121,19 @@ class TheoryController extends Controller
         return redirect('/');
     }
 
+    public function delete(string $id) 
+    {
+        $theory = Theory::findOrFail($id);
+        $get_content = $theory->content;
+
+        $content = Purifier::clean($get_content, array('Attr.EnableID' => true));
+
+        return view ('theory.delete', [
+            'theory' => $theory,
+            'content' => $content
+        ]);
+    }
+
     public function destroy(string $id)
     {
         $theory = Theory::findOrFail($id);

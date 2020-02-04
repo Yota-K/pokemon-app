@@ -91,7 +91,7 @@
                     @if (Auth::id() === $theory->user_id)
                         <div class="edit-area">
                             <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
-                            <a href="#" data-toggle="modal" data-target="#modal1">削除する</a>
+                            <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
                         </div>
                     @endif
 

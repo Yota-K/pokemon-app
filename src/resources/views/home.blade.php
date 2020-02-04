@@ -60,40 +60,13 @@
                     @if (Auth::id() === $theory->user->id)
                         <div class="edit-area">
                             <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
-                            <a href="#" data-toggle="modal" data-target="#modal1">削除する</a>
+                            <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
                         </div>
                     @endif
                 </div>
             </div>
         </div>
         @endforeach
-
-        <div class="modal fade" id="modal1" tabindex="-1"
-            role="dialog" aria-labelledby="label1" aria-hidden="true"
-        >
-            <form class="modal-dialog" role="document" 
-                method="POST" 
-                action=""
-            >
-                @method ('DELETE')
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="label1">この操作は取り消せません</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    育成論を削除しますか？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
-                    <button type="submit" class="btn btn-primary">はい</button>
-                </div>
-            </form>
-          </div>
-        </div>
 
     </div>
 </div>
