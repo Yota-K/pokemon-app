@@ -11360,6 +11360,12 @@ a.text-dark:focus {
   line-height: 190%;
 }
 
+.card-body .user-icon {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+
 .card-body .pokemon-types .type {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -11440,5 +11446,55 @@ a.text-dark:focus {
 
 .card-body .pokemon-types .type-18 {
   background: #fd8fb4;
+}
+
+.card-body .user-info {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.card-body .user-info .date {
+  margin-left: 10px;
+}
+
+.card-body .theory-user-icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.card-body .edit-area {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.card-body .edit-area a {
+  margin: 0 5px;
+}
+
+#user-page #user-profile {
+  text-align: center;
+}
+
+#user-page #user-profile .profile-icon {
+  width: 100px;
+  max-width: 100px;
+  height: 100px;
+}
+
+#user-page .theory-heading {
+  font-size: 2rem;
+  background: #6ca3d4;
+  padding: 0.6rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 10px 0;
 }
 

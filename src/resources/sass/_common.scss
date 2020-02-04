@@ -22,6 +22,11 @@ $colors: (
 // トップ
 .card-body {
     line-height: 190%;
+    .user-icon {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
     .pokemon-types {
         .type {
             border: 1px solid #ddd;
@@ -37,5 +42,47 @@ $colors: (
                 background: $color;
             }
         }
+    }
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        .date {
+            margin-left: 10px;
+        }
+    }
+    .theory-user-icon {
+        width: 34px;
+        height: 34px;
+        margin-right: 10px;
+    }
+    .edit-area {
+        display: flex;
+        justify-content: flex-end;
+        a {
+            margin: 0 5px;
+        }
+    }
+}
+
+// ユーザーページ 
+#user-page {
+    #user-profile {
+        text-align: center;
+        .profile-icon {
+            width: 100px;
+            max-width: 100px;
+            height: 100px;
+        }
+    }
+    .theory-heading {
+        font-size: 2rem;
+        background: #6ca3d4;
+        padding: 0.6rem;
+        text-align: center;
+        color: #fff;
+        border-radius: 0.25rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        margin: 10px 0;
     }
 }
