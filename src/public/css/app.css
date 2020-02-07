@@ -11529,6 +11529,13 @@ main {
   margin-left: 10px;
 }
 
+@media (max-width: 400px) {
+  .card-body .user-info .date {
+    margin-left: 8px;
+    font-size: 0.6rem;
+  }
+}
+
 .card-body .theory-user-icon {
   width: 34px;
   height: 34px;
@@ -11565,6 +11572,17 @@ main {
   border-radius: 0.25rem;
   border: 1px solid rgba(0, 0, 0, 0.125);
   margin: 10px 0;
+}
+
+.content-wrapper {
+  min-height: 800px;
+}
+
+.content-wrapper #content {
+  margin-top: 45px;
+  line-height: 190%;
+  padding: 0.5rem;
+  font-size: 16px;
 }
 
 #footer {
