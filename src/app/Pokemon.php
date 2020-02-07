@@ -20,7 +20,7 @@ class Pokemon extends Model
     ];
 
     public function type_index(array $types ,string $get_type) {
-        $index = 1;
+        $index = 0;
 
         foreach ($types as $key => $type) {
             if ($type === $get_type) $index += $key;
