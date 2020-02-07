@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user_id = $user->id;
-        $theories = Theory::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
+        $theories = Theory::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(5);
 
         return view('user.show', [
             'user' => $user,
