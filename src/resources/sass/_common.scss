@@ -20,7 +20,65 @@ $colors: (
     18: rgb(253, 143, 180),
 );
 
-// トップ
+
+main {
+    min-height: 800px;
+}
+
+/*---------------------------------
+ トップ
+---------------------------------*/
+
+// 検索フォーム
+#search-form {
+    width: 100%;
+    background: azure;
+    border-bottom: 5px solid #6ca3d4;
+    padding: 20px;
+    margin-bottom: 60px;
+    form {
+        text-align: center;
+        .pokemon-search {
+            display: flex;
+            justify-content: center;
+            input {
+                border: 2px solid #ddd;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem;
+                margin: 0;
+                padding: 0.4rem;
+                width: 500px;
+                border-right: none;
+                @media (max-width: 600px) {
+                    width: 310px;
+                } 
+                @media (max-width: 400px) {
+                    width: 200px;
+                    font-size: 0.7rem;
+                } 
+            }
+            #submit-btn {
+                border: 2px solid #ddd;
+                padding: 0.4rem;
+                background: #6ca3d4;
+                color: #fff;
+                border-top-right-radius: 0.35rem;
+                border-bottom-right-radius: 0.35rem;
+                width: 60px;
+                min-width: 60px;
+                border-left: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.pagination {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+// 育成論
 .card-body {
     line-height: 190%;
     .user-icon {
