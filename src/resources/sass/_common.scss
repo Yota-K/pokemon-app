@@ -73,6 +73,7 @@ main {
     }
 }
 
+// ページネーション
 .pagination {
     margin-top: 30px;
     justify-content: center;
@@ -108,6 +109,10 @@ main {
         margin-bottom: 5px;
         .date {
             margin-left: 10px;
+            @media (max-width: 400px) {
+                margin-left: 8px;
+                font-size: 0.6rem;
+            } 
         }
     }
     .theory-user-icon {
@@ -143,6 +148,17 @@ main {
         border-radius: 0.25rem;
         border: 1px solid rgba(0, 0, 0, 0.125);
         margin: 10px 0;
+    }
+}
+
+// 記事ページ
+.content-wrapper {
+    min-height: 800px;
+    #content {
+        margin-top: 45px;
+        line-height: 190%;
+        padding: 0.5rem;
+        font-size: 16px;
     }
 }
 
