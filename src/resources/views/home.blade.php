@@ -4,6 +4,19 @@
 @include ('layouts.header')
 
 @section ('content')
+
+<section class="panel-body" id="search-form">
+    <form method="GET" action="{{ route('home') }}">
+        <div class="form-group">
+            <label>ポケモンの名前をを検索！</label>
+            <div class="pokemon-search">
+                <input type="text" name="keyword" placeholder="ポケモンの名前を入力してください" />
+                <button id="submit-btn" type="submit">検索</button>
+            </div>
+        </div>
+    </form>
+</section>
+
 <div class="container">
     <div class="row justify-content-center">
 
@@ -69,6 +82,11 @@
         @endforeach
 
     </div>
+
+    <div class="pagination">
+        {{ $theories->links() }}
+    </div>
+
 </div>
 @endsection
 
