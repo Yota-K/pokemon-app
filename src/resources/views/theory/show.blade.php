@@ -9,7 +9,18 @@
         <div class="card-body">
             <h1>{{ $theory->title }}</h1>
             <div class="user-info">
-                <span class="user-name">{{ $theory->user->name }}</span>
+                @if ($theory->user->icon_url !== null)
+                    <span 
+                        class="user-icon theory-user-icon"
+                        style="background: url({{ asset(Storage::url($theory->user->icon_url)) }}); background-size: cover;"
+                    ></span>
+                @else
+                    <span 
+                        class="user-icon theory-user-icon"
+                        style="background: url({{ asset(Storage::url('/default-icon/default-icon.png')) }}); background-size: cover;"
+                    ></span>
+                @endif
+                <span class="user-name"><a href="{{ route('user.show', ['id' => $theory->user_id]) }}">{{ $theory->user->name }}</a></span>
                 <span class="date">{{ $theory->created_at->format('Y年m月d日 H:i') }}</span>
             </div>
             <div class="pokemon-data">
