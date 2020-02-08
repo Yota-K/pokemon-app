@@ -16,6 +16,7 @@ class TheoryController extends Controller
 
     public function __construct() 
     {
+        $this->middleware('auth')->except(['show']);
         $this->types = config('types');
         $this->personalities = config('personalities');
     }
@@ -33,6 +34,12 @@ class TheoryController extends Controller
             'content' => 'required',
             'description' => 'nullable|max:30',
         ]);
+    }
+
+    private function exception_handling(string $id) {
+        if (Auth::id() !== $id) {
+            abort(401);
+        }
     }
 
     public function show(Request $request, string $id) 
@@ -95,6 +102,7 @@ class TheoryController extends Controller
     public function edit(Request $request, string $id)
     {
         $theory = Theory::findOrFail($id);
+        $this->exception_handling($theory->user_id);
 
         return view('theory.edit', [
             'theory' => $theory,
@@ -124,8 +132,9 @@ class TheoryController extends Controller
     public function delete(string $id) 
     {
         $theory = Theory::findOrFail($id);
-        $get_content = $theory->content;
+        $this->exception_handling($theory->user_id);
 
+        $get_content = $theory->content;
         $content = Purifier::clean($get_content, array('Attr.EnableID' => true));
 
         return view ('theory.delete', [

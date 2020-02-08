@@ -25,10 +25,12 @@
                         @if ($user->introduction !== null)
                             <div class="introduction">{{ $user->introduction }}</div>
                         @endif
-                        <div class="button-area mt-3">
-                            <a class="btn btn-primary" href="{{ route('user.edit', ['id' => $user->id]) }}" role="button">プロフィールを編集する</a>
-                            <a class="btn btn-primary" href="{{ route('theory.create') }}" role="button">育成論を投稿する</a>
-                        </div>
+                        @if (Auth::id() === $user->id)
+                            <div class="button-area mt-3">
+                                <a class="btn btn-primary" href="{{ route('user.edit', ['id' => $user->id]) }}" role="button">プロフィールを編集する</a>
+                                <a class="btn btn-primary" href="{{ route('theory.create') }}" role="button">育成論を投稿する</a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
