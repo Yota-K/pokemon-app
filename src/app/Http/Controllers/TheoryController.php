@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Theory;
 use App\Pokemon;
+use App\Skill;
 use Purifier;
 
 class TheoryController extends Controller
@@ -28,18 +29,16 @@ class TheoryController extends Controller
             'pokemon_name' => 'required|max:6',
             'first_type' => 'required',
             'second_type' => 'nullable',
+            'skill_name_1' => 'required|max:10',
+            'skill_name_2' => 'required|max:10',
+            'skill_name_3' => 'required|max:10',
+            'skill_name_4' => 'required|max:10',
             'characteristic' => 'required',
             'personality' => 'required|max:5',
             'belongings' => 'required',
             'content' => 'required',
             'description' => 'nullable|max:30',
         ]);
-    }
-
-    private function exception_handling(string $id) {
-        if (Auth::id() !== $id) {
-            abort(401);
-        }
     }
 
     public function show(Request $request, string $id) 
@@ -68,6 +67,7 @@ class TheoryController extends Controller
     {
         $theory = new Theory();
         $pokemon = new Pokemon();
+        $skill = new Skill();
 
         $validator = $this->validator($request->all());
 
@@ -78,14 +78,14 @@ class TheoryController extends Controller
                 ->withInput();
         }
 
-        $data = $theory->create([
+        $theory_data = $theory->create([
             'title' => $request->title,
             'content' => $request->content,
             'description' => $request->description,
             'user_id' => $request->user()->id,
         ]);
 
-        $pokemon->create([
+        $pokemon_data = $pokemon->create([
             'pokemon_name' => $request->pokemon_name,
             'first_type' => $request->first_type,
             'second_type' => $request->second_type,
@@ -93,7 +93,16 @@ class TheoryController extends Controller
             'personality' => $request->personality,
             'belongings' => $request->belongings,
             'user_id' => $request->user()->id,
-            'theory_id' => $data->id,
+            'theory_id' => $theory_data->id,
+        ]);
+
+        $skill->create([
+            'skill_name_1' => $request->skill_name_1,
+            'skill_name_2' => $request->skill_name_2,
+            'skill_name_3' => $request->skill_name_3,
+            'skill_name_4' => $request->skill_name_4,
+            'pokemon_id' => $pokemon_data->id,
+            'theory_id' => $theory_data->id,
         ]);
 
         return redirect('/');
@@ -102,7 +111,10 @@ class TheoryController extends Controller
     public function edit(Request $request, string $id)
     {
         $theory = Theory::findOrFail($id);
-        $this->exception_handling($theory->user_id);
+
+        if (Auth::id() !== $theory->user_id) {
+            abort(401);
+        }
 
         return view('theory.edit', [
             'theory' => $theory,
@@ -125,6 +137,7 @@ class TheoryController extends Controller
 
         $theory->fill($request->all())->save();
         $theory->pokemon->fill($request->all())->save();
+        $theory->skill->fill($request->all())->save();
 
         return redirect('/');
     }
@@ -132,7 +145,10 @@ class TheoryController extends Controller
     public function delete(string $id) 
     {
         $theory = Theory::findOrFail($id);
-        $this->exception_handling($theory->user_id);
+
+        if (Auth::id() !== $theory->user_id) {
+            abort(401);
+        }
 
         $get_content = $theory->content;
         $content = Purifier::clean($get_content, array('Attr.EnableID' => true));
