@@ -22,4 +22,9 @@ class Theory extends Model
     {
         return $this->hasOne('App\Pokemon')->withDefault();
     }
+
+    public function skill() 
+    {
+        return $this->hasOne('App\Skill');
+    }
 }
