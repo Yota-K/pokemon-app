@@ -46,6 +46,14 @@
                 </div>
             </div>
             <div class="form-row">
+                @for ($i = 1; 5 > $i; $i++)
+                    <div class="form-group col-md-2">
+                        <label>ポケモンの技{{ $i }}</label>
+                        <input type="text" class="form-control" name="skill_name_{{ $i }}">
+                    </div>
+                @endfor
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-3">
                     <label>ポケモンの特性</label>
                     <input type="text" class="form-control" name="characteristic">
