@@ -25,6 +25,13 @@
                         </span>
                     @endif
                 </div>
+                <div class="pokemon_skills">
+                    <span class="pokemon-skill">わざ：</span>
+                    <span class="skill-name">{{ $theory->skill->skill_name_1 }} /</span>
+                    <span class="skill-name">{{ $theory->skill->skill_name_2 }} /</span>
+                    <span class="skill-name">{{ $theory->skill->skill_name_3 }} /</span>
+                    <span class="skill-name">{{ $theory->skill->skill_name_4 }}</span>
+                </div>
                 <div class="pokemon-sub-data">
                     <span class="characteristic">特性：{{ $theory->pokemon->characteristic }}</span>
                     <span class="personality">性格：{{ $theory->pokemon->personality }}</span>

@@ -68,6 +68,13 @@
                                 </span>
                             @endif
                         </div>
+                        <div class="pokemon_skills">
+                            <span class="pokemon-skill">わざ：</span>
+                            <span class="skill-name">{{ $theory->skill->skill_name_1 }} /</span>
+                            <span class="skill-name">{{ $theory->skill->skill_name_2 }} /</span>
+                            <span class="skill-name">{{ $theory->skill->skill_name_3 }} /</span>
+                            <span class="skill-name">{{ $theory->skill->skill_name_4 }}</span>
+                        </div>
                         <div class="pokemon-sub-data">
                             <span class="characteristic">特性：{{ $theory->pokemon->characteristic }}</span>
                             <span class="personality">性格：{{ $theory->pokemon->personality }}</span>
@@ -90,12 +97,12 @@
                         <span class="user-name"><a href="{{ route('user.show', ['id' => $theory->user_id]) }}">{{ $theory->user->name }}</a></span>
                         <time class="date">{{ $theory->created_at->format('Y年m月d日 H:i') }}</time>
                     </div>
-                    @if (Auth::id() === $theory->user_id)
-                        <div class="edit-area">
-                            <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
-                            <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
-                        </div>
-                    @endif
+                        @if (Auth::id() === $theory->user_id)
+                            <div class="edit-area">
+                                <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
+                                <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
+                            </div>
+                        @endif
 
                 </div>
             </div>

@@ -59,6 +59,24 @@
                 </div>
             </div>
             <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>ポケモンの技1</label>
+                    <input type="text" class="form-control" name="skill_name_1" value="{{ $theory->skill->skill_name_1 }}">
+                </div>
+                <div class="form-group col-md-2">
+                    <label>ポケモンの技2</label>
+                    <input type="text" class="form-control" name="skill_name_2" value="{{ $theory->skill->skill_name_2 }}">
+                </div>
+                <div class="form-group col-md-2">
+                    <label>ポケモンの技3</label>
+                    <input type="text" class="form-control" name="skill_name_3" value="{{ $theory->skill->skill_name_3 }}">
+                </div>
+                <div class="form-group col-md-2">
+                    <label>ポケモンの技4</label>
+                    <input type="text" class="form-control" name="skill_name_4" value="{{ $theory->skill->skill_name_4 }}">
+                </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-3">
                     <label>ポケモンの特性</label>
                     <input type="text" class="form-control" name="characteristic" value="{{ $theory->pokemon->characteristic }}">
