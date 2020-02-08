@@ -106,6 +106,10 @@ return [
     'attributes' => [
         'title' => '育成論',
         'pokemon_name' => 'ポケモンの名前',
+        'skill_name_1' => '1つ目の技',
+        'skill_name_2' => '2つ目の技',
+        'skill_name_3' => '3つ目の技',
+        'skill_name_4' => '4つ目の技',
         'belongings' => '持ち物',
         'characteristic' => '特性',
         'content' => '記事',
