@@ -97,12 +97,25 @@
                         <span class="user-name"><a href="{{ route('user.show', ['id' => $theory->user_id]) }}">{{ $theory->user->name }}</a></span>
                         <time class="date">{{ $theory->created_at->format('Y年m月d日 H:i') }}</time>
                     </div>
-                        @if (Auth::id() === $theory->user_id)
-                            <div class="edit-area">
-                                <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
-                                <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
-                            </div>
+                    <div class="good-btn-area">
+                        @if ($theory->is_good($theory->id, Auth::id()))
+                            <span class="good-btn add-good" data-id="<?php echo $theory->id; ?>">
+                                <i class="fa fa-heart"  aria-hidden="true"></i>
+                            </span>
+                            <span class="count-{{ $theory->id }}">{{ $theory->good_count($theory->id) }}</span>
+                        @else
+                            <span class="good-btn" data-id="<?php echo $theory->id; ?>">
+                                <i class="fa fa-heart"  aria-hidden="true"></i>
+                            </span>
+                            <span class="count-{{ $theory->id }}">{{ $theory->good_count($theory->id) }}</span>
                         @endif
+                    </div>
+                    @if (Auth::id() === $theory->user_id)
+                        <div class="edit-area">
+                            <a href="{{ route('theory.edit', ['id' => $theory->id]) }}">編集する</a>
+                            <a href="{{ route('theory.delete', ['id' => $theory->id]) }}">削除する</a>
+                        </div>
+                    @endif
 
                 </div>
             </div>
