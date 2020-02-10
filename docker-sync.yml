@@ -1,0 +1,10 @@
+version: '2'
+
+options:
+    compose-dev-file-path: 'docker-compose-dev.yml'
+
+syncs:
+    pokemon-app-syncs:
+        src: './src'
+        sync_strategy: 'unison'
+        sync_userid: '33'

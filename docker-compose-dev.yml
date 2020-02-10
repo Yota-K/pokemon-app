@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    pokemon-app:
+        volumes:
+            - pokemon-app-syncs:/src:nocopy
+
+volumes:
+    pokemon-app-syncs:
+        external: true
