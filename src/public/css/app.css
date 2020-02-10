@@ -11542,6 +11542,25 @@ main {
   margin-right: 10px;
 }
 
+.card-body .good-btn-area {
+  margin-top: 15px;
+}
+
+.card-body .good-btn-area .good-btn {
+  margin-left: 5px;
+  font-size: 1.2rem;
+  color: gray;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.card-body .good-btn-area .add-good {
+  color: red;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 .card-body .edit-area {
   display: -webkit-box;
   display: flex;

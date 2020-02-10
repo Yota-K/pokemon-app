@@ -120,6 +120,20 @@ main {
         height: 34px;
         margin-right: 10px;
     }
+    .good-btn-area {
+        margin-top: 15px;
+        .good-btn {
+            margin-left: 5px;
+            font-size: 1.2rem;
+            color: gray;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+        .add-good {
+            color: red;
+            transition: all 0.4s;
+        }
+    }
     .edit-area {
         display: flex;
         justify-content: flex-end;
