@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@include ('layouts.head')
+@include ('layouts.head', ['title' => '会員登録'])
 
 @section ('content')
 <div class="container">

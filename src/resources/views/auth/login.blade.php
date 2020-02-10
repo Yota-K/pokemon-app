@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@include ('layouts.head')
+@include ('layouts.head', ['title' => 'ログイン'])
 
 @section ('content')
 <div class="container">
@@ -63,6 +63,9 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('パスワードを忘れた方はこちら') }}
                                     </a>
+                                    <div class="sign-in-link">
+                                        <a class="btn-sm btn-link" href="{{ route('register') }}">{{ __('会員登録がまだの方はこちらをクリック！') }}</a>
+                                    </div>
                                 @endif
                             </div>
                         </div>

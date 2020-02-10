@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@include ('layouts.head')
+@include ('layouts.head', ['title' => '育成論の削除 | ポケモン【剣盾】育成論投稿サイト'])
 @include ('layouts.header')
 
 @section ('content')
@@ -19,9 +19,11 @@
                     <span class="pokemon-name">{{ $theory->pokemon->pokemon_name }}</span>
                     <div class="pokemon-types">
                         <span class="pokemon-type">タイプ：</span>
-                        <span class="type type-<?php echo $theory->pokemon->type_index(config('types'), $theory->pokemon->first_type); ?>">
-                            {{ $theory->pokemon->first_type }}
-                        </span>
+                        @if ( $theory->pokemon->first_type !== 'ー')
+                            <span class="type type-<?php echo $theory->pokemon->type_index(config('types'), $theory->pokemon->first_type); ?>">
+                                {{ $theory->pokemon->first_type }}
+                            </span>
+                        @endif
                         @if ( $theory->pokemon->second_type !== 'ー')
                             <span class="type type-<?php echo $theory->pokemon->type_index(config('types'), $theory->pokemon->second_type); ?>">
                                 {{ $theory->pokemon->second_type }}
