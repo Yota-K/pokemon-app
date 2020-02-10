@@ -1,28 +1,14 @@
-// ポケモンのタイプの色を出力するための変数
-$colors: (
-    1: rgb(107, 105, 105),
-    2: rgb(255, 165, 0),
-    3: rgb(0, 162, 255),
-    4: rgb(187, 189, 76),
-    5: rgb(20, 163, 16),
-    6: rgb(31, 218, 218),
-    7: rgb(209, 92, 13),
-    8: rgb(123, 17, 172),
-    9: rgb(145, 91, 30),
-    10: rgb(0, 110, 255),
-    11: rgb(236, 85, 236),
-    12: rgb(82, 212, 71),
-    13: rgb(78, 71, 2),
-    14: rgb(41, 5, 128),
-    15: rgb(255, 123, 0),
-    16: rgb(37, 35, 35),
-    17: rgb(82, 81, 78),
-    18: rgb(253, 143, 180),
-);
-
-
+// common-styles
 main {
     min-height: 800px;
+}
+
+
+/*---------------------------------
+ ログイン画面
+---------------------------------*/
+.sign-in-link {
+    margin-top: 15px;
 }
 
 /*---------------------------------
@@ -32,7 +18,7 @@ main {
 // 検索フォーム
 #search-form {
     width: 100%;
-    background: azure;
+    background: $key-color-1;
     border-bottom: 5px solid #6ca3d4;
     padding: 20px;
     margin-bottom: 60px;
@@ -86,6 +72,12 @@ main {
         display: inline-block;
         border: 1px solid #ddd;
         border-radius: 50%;
+    }
+    .theory-title {
+        font-size: 1.2rem;
+    }
+    .pokemon-name {
+        font-size: 1.3rem;
     }
     .pokemon-types {
         .type {
@@ -143,7 +135,10 @@ main {
     }
 }
 
-// ユーザーページ 
+
+/*---------------------------------
+ ユーザーページ
+---------------------------------*/
 #user-page {
     #user-profile {
         text-align: center;
@@ -165,18 +160,56 @@ main {
     }
 }
 
-// 記事ページ
+/*---------------------------------
+ 記事の部分
+---------------------------------*/
 .content-wrapper {
     min-height: 800px;
+    .content-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .author-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        .user-info {
+            margin-bottom: 20px !important;
+        }
+        @media (max-width: 600px) {
+            display: block;
+            .good-btn-area {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .pokemon-types {
+        margin-bottom: 20px;
+    }
+    .theory-box {
+        display: inline-block;
+        border: 1px solid #ddd;
+        margin: 10px 0;
+        padding: 0.8rem;
+        background: $key-color-1;
+    }
+    @media (max-width: 600px) {
+        display: block;
+    }
     #content {
-        margin-top: 45px;
-        line-height: 190%;
+        margin-top: 30px;
+        line-height: 36px;
         padding: 0.5rem;
         font-size: 16px;
+        h2,h3,h4,h5 {
+            margin: 20px 0;
+        }
     }
 }
 
-// フッター
+/*---------------------------------
+ フッター
+---------------------------------*/
 #footer {
     background: #fff;
     border-top: 1px solid #ddd;

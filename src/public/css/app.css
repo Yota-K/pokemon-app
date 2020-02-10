@@ -21,6 +21,24 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
+  --1: #6b6969;
+  --2: orange;
+  --3: #00a2ff;
+  --4: #bbbd4c;
+  --5: #14a310;
+  --6: #1fdada;
+  --7: #d15c0d;
+  --8: #7b11ac;
+  --9: #915b1e;
+  --10: #006eff;
+  --11: #ec55ec;
+  --12: #52d447;
+  --13: #4e4702;
+  --14: #290580;
+  --15: #ff7b00;
+  --16: #252323;
+  --17: #52514e;
+  --18: #fd8fb4;
   --primary: #3490dc;
   --secondary: #6c757d;
   --success: #38c172;
@@ -11361,6 +11379,14 @@ main {
 }
 
 /*---------------------------------
+ ログイン画面
+---------------------------------*/
+
+.sign-in-link {
+  margin-top: 15px;
+}
+
+/*---------------------------------
  トップ
 ---------------------------------*/
 
@@ -11435,6 +11461,14 @@ main {
   border-radius: 50%;
 }
 
+.card-body .theory-title {
+  font-size: 1.2rem;
+}
+
+.card-body .pokemon-name {
+  font-size: 1.3rem;
+}
+
 .card-body .pokemon-types .type {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -11443,6 +11477,58 @@ main {
   padding: 0.2rem;
   font-size: 12px;
   vertical-align: top;
+}
+
+.card-body .pokemon-types .type-blue {
+  background: #3490dc;
+}
+
+.card-body .pokemon-types .type-indigo {
+  background: #6574cd;
+}
+
+.card-body .pokemon-types .type-purple {
+  background: #9561e2;
+}
+
+.card-body .pokemon-types .type-pink {
+  background: #f66d9b;
+}
+
+.card-body .pokemon-types .type-red {
+  background: #e3342f;
+}
+
+.card-body .pokemon-types .type-orange {
+  background: #f6993f;
+}
+
+.card-body .pokemon-types .type-yellow {
+  background: #ffed4a;
+}
+
+.card-body .pokemon-types .type-green {
+  background: #38c172;
+}
+
+.card-body .pokemon-types .type-teal {
+  background: #4dc0b5;
+}
+
+.card-body .pokemon-types .type-cyan {
+  background: #6cb2eb;
+}
+
+.card-body .pokemon-types .type-white {
+  background: #fff;
+}
+
+.card-body .pokemon-types .type-gray {
+  background: #6c757d;
+}
+
+.card-body .pokemon-types .type-gray-dark {
+  background: #343a40;
 }
 
 .card-body .pokemon-types .type-1 {
@@ -11572,6 +11658,10 @@ main {
   margin: 0 5px;
 }
 
+/*---------------------------------
+ ユーザーページ
+---------------------------------*/
+
 #user-page #user-profile {
   text-align: center;
 }
@@ -11593,16 +11683,77 @@ main {
   margin: 10px 0;
 }
 
+/*---------------------------------
+ 記事の部分
+---------------------------------*/
+
 .content-wrapper {
   min-height: 800px;
 }
 
+.content-wrapper .content-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.content-wrapper .author-area {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+          align-items: baseline;
+}
+
+.content-wrapper .author-area .user-info {
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 600px) {
+  .content-wrapper .author-area {
+    display: block;
+  }
+
+  .content-wrapper .author-area .good-btn-area {
+    margin-bottom: 10px;
+  }
+}
+
+.content-wrapper .pokemon-types {
+  margin-bottom: 20px;
+}
+
+.content-wrapper .theory-box {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 0.8rem;
+  background: azure;
+}
+
+@media (max-width: 600px) {
+  .content-wrapper {
+    display: block;
+  }
+}
+
 .content-wrapper #content {
-  margin-top: 45px;
-  line-height: 190%;
+  margin-top: 30px;
+  line-height: 36px;
   padding: 0.5rem;
   font-size: 16px;
 }
+
+.content-wrapper #content h2,
+.content-wrapper #content h3,
+.content-wrapper #content h4,
+.content-wrapper #content h5 {
+  margin: 20px 0;
+}
+
+/*---------------------------------
+ フッター
+---------------------------------*/
 
 #footer {
   background: #fff;
