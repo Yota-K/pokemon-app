@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@include ('layouts.head')
+@include ('layouts.head', ['title' => 'ユーザー編集 | ポケモン【剣盾】育成論投稿サイト'])
 @include ('layouts.header')
 
 @section ('content')
