@@ -28,5 +28,9 @@ Route::patch('/theory/{id}', 'TheoryController@update')->name('theory.update');
 Route::get('/theory/{id}/delete', 'TheoryController@delete')->name('theory.delete');
 Route::delete('/theory/{id}', 'TheoryController@destroy')->name('theory.destroy');
 
+// 育成論のいいね
+Route::post('/good/theory/{id}', 'GoodTheoryController@store');
+Route::delete('/good/theory/remove/{id}', 'GoodTheoryController@destroy');
+
 // 認証関連
 Auth::routes();
