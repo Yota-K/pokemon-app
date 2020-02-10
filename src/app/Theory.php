@@ -27,4 +27,21 @@ class Theory extends Model
     {
         return $this->hasOne('App\Skill');
     }
+
+    public function good() {
+        return $this->hasMany('App\GoodTheory');
+    }
+
+    public function good_count(string $theory_id) 
+    {
+        return $this->good()->where('theory_id', $theory_id)->count();
+    }
+
+    public function is_good(string $theory_id, string $user_id) 
+    {
+        return $this->good()
+                    ->where('theory_id', $theory_id)
+                    ->where('user_id', $user_id)
+                    ->exists();
+    }
 }
