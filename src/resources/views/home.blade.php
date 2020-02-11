@@ -73,7 +73,7 @@
                         @else
                             <span 
                                 class="user-icon theory-user-icon"
-                                style="background: url({{ asset(Storage::url('/default-icon/default-icon.png')) }}); background-size: cover;"
+                                style="background: url('https://drive.google.com/uc?id=1YtLZmd_Xy7Py_dKfUPtUTMN6bQnTfc5e'); background-size: cover;"
                             ></span>
                         @endif
                         <span class="user-name"><a href="{{ route('user.show', ['id' => $theory->user_id]) }}">{{ $theory->user->name }}</a></span>
