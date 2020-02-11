@@ -54795,11 +54795,14 @@ window.addEventListener('DOMContentLoaded', function () {
   var simpleEditor = new simplemde__WEBPACK_IMPORTED_MODULE_0___default.a({
     element: editorEl
   });
-  submitBtn.addEventListener('click', function (e) {
-    // エディター内のテキストをtextareaコピー
-    simpleEditor.codemirror.save();
-    hiddenEditor.value = editorEl.value;
-  });
+
+  if (submitBtn !== null) {
+    submitBtn.addEventListener('click', function (e) {
+      // エディター内のテキストをtextareaコピー
+      simpleEditor.codemirror.save();
+      hiddenEditor.value = editorEl.value;
+    });
+  }
 });
 
 /***/ }),
