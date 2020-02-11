@@ -1,6 +1,9 @@
 // common-styles
 main {
     min-height: 800px;
+    .container {
+        margin-top: 80px;
+    }
 }
 
 
@@ -192,17 +195,21 @@ main {
         margin: 10px 0;
         padding: 0.8rem;
         background: $key-color-1;
-    }
-    @media (max-width: 600px) {
-        display: block;
+        @media (max-width: 600px) {
+            display: block;
+            margin: 20px 0;
+        }
     }
     #content {
-        margin-top: 30px;
         line-height: 36px;
         padding: 0.5rem;
         font-size: 16px;
         h2,h3,h4,h5 {
-            margin: 20px 0;
+            margin: 35px 0 20px;
+            line-height: 190%;
+        }
+        p {
+            margin: 30px 0;
         }
     }
 }
