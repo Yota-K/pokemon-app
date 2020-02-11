@@ -139,4 +139,8 @@
 </div>
 @endsection
 
+@section ('script')
+<script src="{{ asset('js/good-btn.js') }}"></script>
+@endsection
+
 @include ('layouts.footer')
