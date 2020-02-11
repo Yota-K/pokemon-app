@@ -10,9 +10,11 @@ window.addEventListener('DOMContentLoaded', () => {
         element: editorEl
     });
 
-    submitBtn.addEventListener('click', (e) => {
-        // エディター内のテキストをtextareaコピー
-        simpleEditor.codemirror.save();
-        hiddenEditor.value = editorEl.value;
-    })
+    if (submitBtn !== null) {
+        submitBtn.addEventListener('click', (e) => {
+            // エディター内のテキストをtextareaコピー
+            simpleEditor.codemirror.save();
+            hiddenEditor.value = editorEl.value;
+        })
+    }
 });
