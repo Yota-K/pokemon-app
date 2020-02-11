@@ -3,9 +3,10 @@
 @yield ('head')
 <body>
     @yield ('header')
-    <main class="py-4">
+    <main>
         @yield ('content')
     </main>
     @yield ('footer')
 </body>
+    @yield ('script')
 </html>

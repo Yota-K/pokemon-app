@@ -8,7 +8,7 @@
 <section class="panel-body" id="search-form">
     <form method="GET" action="{{ route('home') }}">
         <div class="form-group">
-            <label>ポケモンの名前をを検索！</label>
+            <label>ポケモンの名前を検索！</label>
             <div class="pokemon-search">
                 <input type="text" name="keyword" placeholder="ポケモンの名前を入力してください" />
                 <button id="submit-btn" type="submit">検索</button>
@@ -117,6 +117,10 @@
     </div>
 
 </div>
+@endsection
+
+@section ('script')
+<script src="{{ asset('js/good-btn.js') }}"></script>
 @endsection
 
 @include ('layouts.footer')
