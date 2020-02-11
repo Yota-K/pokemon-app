@@ -6,7 +6,7 @@
 @section ('content')
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">育成論</div>
+        <h1 class="panel-heading mb-3">育成論</h1>
     <div class="panel-body">
         <form method="POST" action="{{ route('theory.update', ['id' => $theory->id]) }}">
             @if ($errors->any())
