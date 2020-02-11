@@ -20,20 +20,6 @@
                             @method ('PATCH')
 
                             <div class="form-group row">
-                                <label for="icon" class="col-md-4 col-form-label text-md-right">プロフィール画像</label>
-
-                                <div class="col-md-6">
-                                    <input type="file" class="@error('icon') is-invalid @enderror" name="icon" value="">
-
-                                    @error ('icon')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">ユーザー名</label>
 
                                 <div class="col-md-6">
